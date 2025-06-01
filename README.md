@@ -2,13 +2,14 @@
 
 A modern and responsive portfolio website built to showcase my work, skills, and experience as a software developer. This site acts as a personal brand and digital resume to share with recruiters, hiring managers, and fellow developers.
 
-![Portfolio Screenshot](./assets/preview.png) <!-- Optional screenshot -->
+![Portfolio Screenshot](https://github.com/user-attachments/assets/7a65b2ec-b935-44c3-be4b-f54b712886cd)
+
 
 ---
 
 ## 🔗 Live Demo
 
-🌐 [View Portfolio](https://your-portfolio-url.com)
+🌐 [View Portfolio](https://sanjjithportfolio.vercel.app/)
 
 ---
 
