@@ -1,0 +1,339 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cyberpunk';
+  src: url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+}
+
+@font-face {
+  font-family: 'Terminal';
+  src: url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+}
+
+:root {
+  --color-background: #0f0f17;
+  --color-primary: #00f0ff;
+  --color-secondary: #ff00aa;
+  --color-accent: #ffcc00;
+  --color-dark-surface: #1a1a2e;
+  --color-darker-surface: #16162a;
+  --font-cyberpunk: 'Orbitron', sans-serif;
+  --font-terminal: 'Share Tech Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#0f0f17] text-white font-sans;
+  background: var(--color-background);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-terminal);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-darker-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 5px;
+}
+
+/* Cyberpunk component styles */
+.cyberpunk-border {
+  position: relative;
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  overflow: hidden;
+}
+
+.cyberpunk-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  animation: cyberpunk-border-flow 2s linear infinite;
+}
+
+@keyframes cyberpunk-border-flow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.neon-text {
+  color: var(--color-primary);
+  text-shadow: 0 0 5px var(--color-primary), 0 0 10px var(--color-primary);
+}
+
+.neon-text-secondary {
+  color: var(--color-secondary);
+  text-shadow: 0 0 5px var(--color-secondary), 0 0 10px var(--color-secondary);
+}
+
+.glitch-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-effect::before {
+  left: 2px;
+  text-shadow: -1px 0 var(--color-secondary);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim-1 5s linear infinite alternate-reverse;
+}
+
+.glitch-effect::after {
+  left: -2px;
+  text-shadow: -1px 0 var(--color-primary);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim-2 5s linear infinite alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip: rect(20px, 9999px, 25px, 0);
+  }
+  10% {
+    clip: rect(44px, 9999px, 90px, 0);
+  }
+  20% {
+    clip: rect(67px, 9999px, 78px, 0);
+  }
+  30% {
+    clip: rect(10px, 9999px, 90px, 0);
+  }
+  40% {
+    clip: rect(31px, 9999px, 86px, 0);
+  }
+  50% {
+    clip: rect(62px, 9999px, 62px, 0);
+  }
+  60% {
+    clip: rect(60px, 9999px, 33px, 0);
+  }
+  70% {
+    clip: rect(15px, 9999px, 94px, 0);
+  }
+  80% {
+    clip: rect(32px, 9999px, 26px, 0);
+  }
+  90% {
+    clip: rect(69px, 9999px, 44px, 0);
+  }
+  100% {
+    clip: rect(57px, 9999px, 73px, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip: rect(18px, 9999px, 55px, 0);
+  }
+  10% {
+    clip: rect(74px, 9999px, 20px, 0);
+  }
+  20% {
+    clip: rect(37px, 9999px, 28px, 0);
+  }
+  30% {
+    clip: rect(80px, 9999px, 50px, 0);
+  }
+  40% {
+    clip: rect(81px, 9999px, 86px, 0);
+  }
+  50% {
+    clip: rect(42px, 9999px, 22px, 0);
+  }
+  60% {
+    clip: rect(40px, 9999px, 93px, 0);
+  }
+  70% {
+    clip: rect(75px, 9999px, 14px, 0);
+  }
+  80% {
+    clip: rect(52px, 9999px, 46px, 0);
+  }
+  90% {
+    clip: rect(19px, 9999px, 64px, 0);
+  }
+  100% {
+    clip: rect(17px, 9999px, 23px, 0);
+  }
+}
+
+/* Scan line effect */
+.scan-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-lines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 240, 255, 0.03) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.holographic {
+  position: relative;
+  overflow: hidden;
+}
+
+.holographic::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 240, 255, 0.1) 30%,
+    rgba(0, 240, 255, 0.1) 40%,
+    transparent 40%,
+    transparent 60%,
+    rgba(255, 0, 170, 0.1) 60%,
+    rgba(255, 0, 170, 0.1) 70%,
+    transparent 70%
+  );
+  animation: holographic-rotate 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes holographic-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button Styles */
+.cyberpunk-button {
+  position: relative;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 10px 20px;
+  font-family: var(--font-cyberpunk);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cyberpunk-button:hover {
+  background-color: rgba(0, 240, 255, 0.1);
+  box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
+}
+
+.cyberpunk-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  animation: border-flow 2s linear infinite;
+}
+
+@keyframes border-flow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Section styling */
+.section-container {
+  @apply relative py-16 px-6 md:px-12 lg:px-24 mx-auto max-w-7xl;
+}
+
+.section-heading {
+  @apply font-bold mb-12 text-3xl md:text-4xl font-[Orbitron];
+  color: white;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+}
+
+/* Card effects */
+.cyberpunk-card {
+  @apply relative bg-[#1a1a2e] rounded overflow-hidden;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.cyberpunk-card:hover {
+  box-shadow: 0 0 15px var(--color-primary);
+  transform: translateY(-5px);
+}
+
+/* Grid line background */
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  pointer-events: none;
+}
