@@ -73,7 +73,6 @@ const resumeData: ResumeData = {
     { name: "Canva", level: 70, category: "tool" },
     { name: "Gimp", level: 70, category: "tool" },
     { name: "Figma", level: 80, category: "tool" },
-    { name: "Figma", level: 80, category: "tool" },
     { name: "Problem Solving", level: 90, category: "soft" },
     { name: "Team Collaboration", level: 95, category: "soft" },
     { name: "Communication", level: 90, category: "soft" },
@@ -130,15 +129,15 @@ const resumeData: ResumeData = {
   
   experience: [
     {
-      position: "Business Development Associate",
+      position: "Software Developer",
       company: "NXTSYNC Pvt. Ltd",
-      location: "Telangana, India",
-      period: "May 2025 - Present",
+      location: "Hyderabad, India",
+      period: "May 2025 - Nov 2021",
       description: [
-        "Driving strategic partnerships, lead generation",
-        "client acquisition for tech solutions",
-        "Collaborating cross-functionally to optimize sales funnels and expand market reach",
-        "Conducting market research to identify high-potential growth opportunities"
+        "Developed and maintained scalable web applications using modern frameworks and technologies.",
+        "Collaborated with cross-functional teams to design, test, and deploy software solutions aligned with client requirements.",
+        "Optimized code performance, improved system reliability, and implemented version control best practices.",
+        "Participated in agile sprints, contributing to continuous integration and deployment processes."
       ]
     }
     
@@ -146,7 +145,7 @@ const resumeData: ResumeData = {
   
   contact: {
     email: "mailtosanjjithsivashanmugam@gmail.com",
-    phone: "9361305849",
+    phone: "+91 9361305849",
     linkedin: "linkedin.com/in/sanjjith/",
     github: "github.com/Sanjjith03",
   }
